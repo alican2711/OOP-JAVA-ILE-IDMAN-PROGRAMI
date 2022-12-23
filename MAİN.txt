@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("İdman programına hoşgeldiniz...");
+        String Hareketler = "şınav\n"+"squat\n"+"mekik\n"+"ipatlama\n";
+        System.out.println(Hareketler);
+        System.out.println("bir idman oluşturunuz..");
+        System.out.println("şınav sayısı:");
+        int şınav = scanner.nextInt();
+        System.out.println("squat sayısı:");
+        int squat = scanner.nextInt();
+        System.out.println("mekik sayısı");
+        int mekik = scanner.nextInt();
+        System.out.println("ip atlama sayısı :");
+        int ipatlama = scanner.nextInt();
+        scanner.nextLine();
+        idman idman = new idman(şınav,squat,mekik,ipatlama);
+        System.out.println("Antremanınız yükleniyor ...");
+
+        while(idman.idmanBittiMi()== false){
+            System.out.println("Hakeret türü : squat , şınav , mekik , ip atlama");
+            String hareket = scanner.nextLine();
+            System.out.println("bu hareketten kaç tane yapıcaksınız?");
+            int sayı = scanner.nextInt();
+            scanner.nextLine();
+            idman.hareketYap(hareket,sayı);
+        }
+
+
+    }
+}

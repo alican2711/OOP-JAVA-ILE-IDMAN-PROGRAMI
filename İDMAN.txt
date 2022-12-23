@@ -1,0 +1,103 @@
+public class idman {
+    private int sınav_sayısı;
+    private int squat_sayısı;
+    private int mekik_sayısı;
+    private int ipatlama_sayısı;
+
+    public idman(int sınav_sayısı,int squat_sayısı,int mekik_sayısı,int ipatlama_sayısı){
+        this.sınav_sayısı=sınav_sayısı;
+        this.squat_sayısı=squat_sayısı;
+        this.mekik_sayısı=mekik_sayısı;
+        this.ipatlama_sayısı=ipatlama_sayısı;
+
+
+
+        }    public int getSınav_sayısı(){
+            return sınav_sayısı;
+    }public void  setSınav_sayısı(int sınav_sayısı){
+        this.sınav_sayısı=sınav_sayısı;
+    }public int getSquat_sayısı(){
+        return squat_sayısı;
+
+    }public void setSquat_sayısı(int squat_sayısı){
+        this.squat_sayısı=squat_sayısı;
+    }public int getMekik_sayısı(){
+        return mekik_sayısı;
+    }public void setMekik_sayısı(int mekik_sayısı){
+        this.mekik_sayısı=mekik_sayısı;
+    }public int getIpatlama_sayısı(){
+        return ipatlama_sayısı;
+    }public void setIpatlama_sayısı(int ipatlama_sayısı){
+        this.ipatlama_sayısı=ipatlama_sayısı;
+    }
+
+    public void hareketYap(String harekettürü,int sayı){
+    if (harekettürü.equals("sınav")){
+        sınavYap(sayı);
+    } else if (harekettürü.equals("squat")) {
+        squatYap(sayı);
+
+    } else if (harekettürü.equals("mekik")) {
+        mekikYap(sayı);
+
+    } else if (harekettürü.equals("ipatlama")) {
+        ipatlamaYap(sayı);
+
+    }else {
+        System.out.println("geçersiz hareket türü...");
+    }
+    }
+    public void sınavYap(int sayı){
+        if (sınav_sayısı==0){
+            System.out.println("sınav sayısını tamamladınız..");
+
+        } if (sınav_sayısı-sayı<0) {
+            System.out.println("tebrikler ekstra güçleniyorsunuz..");
+            sınav_sayısı =0;
+                System.out.println("kalan şınav sayısı .."+ sınav_sayısı);
+
+
+        }else {
+            sınav_sayısı -= sayı;
+                System.out.println("yapılıcak şınav sayısı ..."+ sınav_sayısı);
+            }
+
+        }
+
+public void squatYap(int sayı){
+        if (squat_sayısı==0){
+            System.out.println("tebrikler hedefinizi tamamladınız..");
+        }if (squat_sayısı-sayı<0){
+            squat_sayısı =0;
+                System.out.println("tebrikler ekstra güçleniyorsunuz..."+squat_sayısı);
+            }else {
+            squat_sayısı -=sayı;
+                System.out.println("yapılıcak şınav sayısı..."+squat_sayısı);
+            }
+        }public void mekikYap(int sayı){
+        if (mekik_sayısı==0){
+            System.out.println("tebrikler hedefinize ulaştınız..");
+        }if (mekik_sayısı-sayı<0){
+            mekik_sayısı = 0;
+                System.out.println("tebrikler ekstra hareket ile daha çok güçleniyorsunuz.."+mekik_sayısı);
+            }else {
+            mekik_sayısı -= sayı;
+                System.out.println("yapılıcak mekik sayısı..."+mekik_sayısı);
+            }
+        }public void ipatlamaYap(int sayı){
+        if (ipatlama_sayısı==0){
+            System.out.println("tebrikler hedefinize ulaştınız");
+        }if (ipatlama_sayısı-sayı<0){
+            ipatlama_sayısı=0;
+                System.out.println("ekstra hareket ile güçleniyorsunuz..."+mekik_sayısı);
+            } else  {
+            ipatlama_sayısı -=sayı;
+                System.out.println("yapılıcak ipt atlama hareketinin sayısı.."+ipatlama_sayısı);
+
+            }
+        }public boolean idmanBittiMi(){
+        return (sınav_sayısı == 0)&&(mekik_sayısı == 0) && (squat_sayısı ==0 )&&( ipatlama_sayısı == 0);
+        }
+
+    }
+
